@@ -39,14 +39,13 @@
   <!-- My JS -->
   <script>
     $(function() {
-      var template = $('#templateOne').html();
-      var result = Mustache.render(template, {
-        "item" : "this is the item",
-        "description" : "this is the description",
-        "price" : 15.99
-      });
-      $('#container').html(result);
-    });
+      var template = $('#templateOne').html(); //grabs script tag with id which contains the mustache template
+      $.getJSON("data.json", function (data) {
+          console.log("success");
+          var result = Mustache.render(template, data); //mustache function
+          $('#container').html(result); //puts the json data collected from this function inside the template
+      });//grabs specified json file and runs mustache method to place json into template
+    });//Dom ready
   </script>
 
 </body>
