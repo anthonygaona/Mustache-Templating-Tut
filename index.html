@@ -48,6 +48,9 @@
         <p>There is no name for the dog</p>
       {{/dogs}}
       <h1>{{total}}</h1>
+      {{#decide}}
+        <p>{{description}}</p>
+      {{/decide}}
     </div>
   </script>
   <div id="container"></div>
@@ -62,7 +65,14 @@
           console.log("success");
           data.total = function() {
             return "have to add functions after calling the json file"
-          }
+          };
+          data.decide = function() {
+                            //text = the mustache in between the function section. it is not rendered automatically
+                            //render = call back function from mustache that reunders the mustache
+            return function(text,render) {
+              return "<em>" + render(text) + "</em>"
+            }
+          };
           var result = Mustache.render(template, data); //mustache function
           $('#container').html(result); //puts the json data collected from this function inside the template
       });//grabs specified json file and runs mustache method to place json into template
