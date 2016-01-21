@@ -47,6 +47,7 @@
       {{^dogs}}
         <p>There is no name for the dog</p>
       {{/dogs}}
+      <h1>{{total}}</h1>
     </div>
   </script>
   <div id="container"></div>
@@ -59,6 +60,9 @@
       var template = $('#templateOne').html(); //grabs script tag with id which contains the mustache template
       $.getJSON("data.json", function (data) {
           console.log("success");
+          data.total = function() {
+            return "have to add functions after calling the json file"
+          }
           var result = Mustache.render(template, data); //mustache function
           $('#container').html(result); //puts the json data collected from this function inside the template
       });//grabs specified json file and runs mustache method to place json into template
