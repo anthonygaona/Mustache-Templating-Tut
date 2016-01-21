@@ -41,6 +41,12 @@
       {{^inStock}}
         <h2>Sorry we are out of stock</h2>
       {{/inStock}}
+      {{#dogs}}
+        <p>{{name}}</p>
+      {{/dogs}}
+      {{^dogs}}
+        <p>There is no name for the dog</p>
+      {{/dogs}}
     </div>
   </script>
   <div id="container"></div>
