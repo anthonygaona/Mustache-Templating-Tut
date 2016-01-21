@@ -1,5 +1,10 @@
 {
   "item" : "this is the item",
   "description" : "this is the description",
-  "price" : 15.99
+  "price" : 15.99,
+  "employees" : [
+    {"name" : "tony"},
+    {"name" : "cathy"},
+    {"name" : "steph"}
+  ]
 }
