@@ -35,6 +35,12 @@
           <li>{{name}}</li>
         </ul>
       {{/employees}}
+      {{#inStock}}
+        <h2>It's in stock!</h2>
+      {{/inStock}}
+      {{^inStock}}
+        <h2>Sorry we are out of stock</h2>
+      {{/inStock}}
     </div>
   </script>
   <div id="container"></div>

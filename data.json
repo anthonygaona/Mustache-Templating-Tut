@@ -6,5 +6,6 @@
     {"name" : "tony"},
     {"name" : "cathy"},
     {"name" : "steph"}
-  ]
+  ],
+  "inStock" : true
 }
