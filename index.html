@@ -25,19 +25,29 @@
 </head>
 <body>
   <h1 class="">Hello World</h1>
-
-
-
+  <script type="text/template" id="templateOne">
+    <div class="content">
+      <div>{{item}}</div>
+      <div>{{description}}</div>
+      <div>{{price}}</div>
+    </div>
+  </script>
+  <div id="container"></div>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js" charset="utf-8"></script>
   <!-- My JS -->
-  <script type="text/template" id="templateOne">
-    <div class="content">
-      <div>{{field1}}</div>
-      <div>{{field2}}</div>
-      <div>{{field3}}</div>
-    </div>
+  <script>
+    $(function() {
+      var template = $('#templateOne').html();
+      var result = Mustache.render(template, {
+        "item" : "this is the item",
+        "description" : "this is the description",
+        "price" : 15.99
+      });
+      $('#container').html(result);
+    });
   </script>
+
 </body>
 </html>
